@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "jimp/browser/lib/jimp": "./jimp/browser/lib/jimp.js"
+  }
+}

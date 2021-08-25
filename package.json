@@ -1,0 +1,45 @@
+{
+  "name": "@snakemode/emingmask",
+  "version": "1.0.1",
+  "description": "Reverse engineered Web Bluetooth client library for the EMing LED Mask, identified as EMing LED Mask Screen v2.0",
+  "main": "dist/app/index.js",
+  "types": "dist/app/index.d.ts",
+  "scripts": {
+    "start": "snowpack dev --watch --polyfill-node",
+    "ci": "tsc",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snakemode/EMingMaskDriver.git"
+  },
+  "keywords": [
+    "drawable",
+    "canvas",
+    "ui",
+    "html",
+    "touch"
+  ],
+  "author": "Jo Franchetti, David Whitney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snakemode/EMingMaskDriver/issues"
+  },
+  "homepage": "https://github.com/snakemode/EMingMaskDriver#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@types/jest": "^26.0.15",
+    "@types/jimp": "^0.2.28",
+    "snowpack": "^2.14.3"
+  },
+  "dependencies": {
+    "commonjs": "0.0.1",
+    "jimp": "^0.16.1",
+    "typescript": "^2.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
