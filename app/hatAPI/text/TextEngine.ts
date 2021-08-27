@@ -8,7 +8,7 @@ export class TextEngine {
     private _spriteSheetCharacters: string;
     private _ready: boolean;
 
-    constructor(spritePath: string | Buffer = "./text/a-z.png") {
+    constructor(spritePath: string | Buffer = "C:\\Users\\jedid\\Desktop\\LED-Hat\\app\\hatAPI\\text\\a-z.png") {
         this._ready = false;
         this._spritePath = spritePath;
         this._spriteSheetCharacters = "abcdefghijklmnopqrstuvwxyz";

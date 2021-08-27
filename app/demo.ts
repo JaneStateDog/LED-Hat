@@ -9,7 +9,7 @@ var loc = {x: 5, y: 5};
 
 var isConnected = false;
 
-document.getElementById("go").addEventListener("click", async () => {
+document.getElementById("connect").addEventListener("click", async () => {
 
     await mask.connect();
     await mask.screen.clear();

@@ -1,1 +1,1 @@
-npm install snowpack && npx snowpack dev --watch --polyfill-node
+npm install snowpack && npm install jimp && npx snowpack dev --watch --polyfill-node
