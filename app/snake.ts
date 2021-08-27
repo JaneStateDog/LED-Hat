@@ -6,14 +6,14 @@ const mask = new EmIngMask("GLASSES-006A63");
 
 var isConnected = false;
 
-var loc = {x: 0, y: 0};
+var loc = {x: 5, y: 5};
 var snake = [{x: loc.x, y: loc.y}, {x: loc.x, y: loc.y + 1}];
 
 var direction = "RIGHT";
 
 function getRandomInt(max: number) { return Math.floor(Math.random() * max); }
 
-var food = {x: getRandomInt(35), y: getRandomInt(11)};
+var food = {x: getRandomInt(34) + 1, y: getRandomInt(10) + 1};
 
 var gameState = "RUNNING";
 
@@ -25,6 +25,14 @@ document.getElementById("connect").addEventListener("click", async () => {
     await mask.screen.clear();
 
     isConnected = true;
+
+    let toFill = [];
+    for (let i = 0; i < 12; i++) {
+        if (i == 0 || i == 11) toFill.push("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        else toFill.push("X                                  X");
+    }
+
+    await mask.pixels.setAll(toFill, {r: 255, g: 1, b: 1});
 
 });
 
@@ -58,7 +66,7 @@ setInterval(async () => {
         else return;
 
 
-        if (loc.x >= 36 || loc.x < 0 || loc.y >= 12 || loc.y < 0) {
+        if (loc.x > 36 || loc.x <= 0 || loc.y > 12 || loc.y <= 0) {
             gameState = "GAME OVER";
             return;
         }
@@ -76,7 +84,7 @@ setInterval(async () => {
 
         snake.unshift({x: loc.x, y: loc.y});
         if (loc.x == food.x && loc.y == food.y) {
-            food = {x: getRandomInt(35), y: getRandomInt(11)};
+            food = {x: getRandomInt(34) + 1, y: getRandomInt(10) + 1};
         } else {
             await mask.pixels.set(snake[snake.length - 1], {r: 1, g: 1, b: 1});
             snake.pop();
