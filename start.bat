@@ -1,0 +1,1 @@
+npm install snowpack && npx snowpack dev --watch --polyfill-node
